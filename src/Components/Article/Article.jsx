@@ -1,26 +1,25 @@
-import React from "react";
-
+import one from "./image/one.jpg"
+import tow from "./image/tow.jpg"
+import three from "./image/three.jpg"
 const articles = [
   {
     id: 1,
     date: "August 29, 2024",
     title: "Tips for Choosing High-Quality Paint for Your Home",
-    image:
-      "https://images.unsplash.com/photo-1581091870622-6c6a2b80f3f5?auto=format&fit=crop&w=600&q=80",
+    image:one,
   },
   {
     id: 2,
     date: "August 29, 2024",
     title: "Benefits of Water-Based Paint for a Modern Home",
     image:
-      "https://images.unsplash.com/photo-1608571429261-b57a6e8617a6?auto=format&fit=crop&w=600&q=80",
+      tow,
   },
   {
     id: 3,
     date: "August 29, 2024",
     title: "Guide: How to Use Colors to Beautify Your Rooms",
-    image:
-      "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=600&q=80",
+    image:three
   },
 ];
 
@@ -28,7 +27,6 @@ export default function Article() {
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h4 className="text-sm font-semibold text-red-500 uppercase tracking-wide">
             Articles
@@ -43,7 +41,6 @@ export default function Article() {
           </p>
         </div>
 
-        {/* Article Cards */}
         <div className="grid gap-8 md:grid-cols-3">
           {articles.map((article) => (
             <div

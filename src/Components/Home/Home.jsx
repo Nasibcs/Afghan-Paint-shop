@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -7,10 +6,8 @@ export default function Home() {
       className="w-full h-screen bg-cover bg-center bg-no-repeat relative"
       style={{ backgroundImage: "url('/images/bgimg.jpg')" }}
     >
-      {/* Overlay with gradient for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 xl:bg-black/40" />
 
-      {/* Hero Content */}
       <div className="relative w-full h-full flex flex-col justify-center items-center px-4">
         
         <motion.h1
