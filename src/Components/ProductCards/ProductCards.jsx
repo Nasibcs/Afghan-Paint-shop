@@ -1,13 +1,15 @@
+import { useState } from "react";
+import sealer from "./image/sealer.png";
+import gold from "./image/gold.png";
+import watergloss from "./image/watergloss.webp";
+import diamond from "./image/diamond.png";
+import platinum from "./image/platinum.jpg";
 import silver from "./image/silver1.jpg"
-import sealer from "./image/sealer.png"
-import gold from "./image/gold.png"
-import watergloss from "./image/watergloss.webp"
-import diamond  from "./image/diamond.png"
-import platinum from "./image/platinum.jpg"
 
 const products = [
   {
     name: "SILVER",
+    price: 400, 
     image: silver,
     features: [
       "Durability up to 2 years",
@@ -20,6 +22,7 @@ const products = [
   },
   {
     name: "GOLD",
+    price: 580,
     image: gold,
     features: [
       "Durability up to 5 years",
@@ -32,6 +35,7 @@ const products = [
   },
   {
     name: "DIAMOND",
+    price: 420,
     image: diamond,
     features: [
       "Durability up to 7 years",
@@ -45,15 +49,15 @@ const products = [
   },
   {
     name: "SEALER",
+    price: 640,
     image: sealer,
-    features: [
-      "Base coat for stronger, longer-lasting paint results",
-    ],
+    features: ["Base coat for stronger, longer-lasting paint results"],
     interior: "25 Kg",
     exterior: "25 Kg",
   },
   {
     name: "WATERGLOSS",
+    price: 560,
     image: watergloss,
     features: [
       "Water-based formula",
@@ -66,6 +70,7 @@ const products = [
   },
   {
     name: "PLATINUM",
+    price: 200,
     image: platinum,
     features: [
       "Durability up to 10 years",
@@ -80,26 +85,30 @@ const products = [
   },
 ];
 
-export default function ProductCards() {
+export default function ProductStore() {
+  const [cart, setCart] = useState([]);
+
+  const handleBuyNow = (product) => {
+    setCart([...cart, product]);
+  };
+
+
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Products */}
         <h2 className="text-4xl font-extrabold text-center mb-6 text-gray-800">
           Our Products
         </h2>
         <p className="text-center text-gray-600 mb-14 max-w-3xl mx-auto">
           Afghan Paint is your trusted choice for creating beautiful, functional, 
-          and lasting spaces. We combine premium quality with modern innovation 
-          to deliver vibrant colors, smooth finishes, and long-lasting protection 
-          for every wall, ceiling, and exterior surface. Whether it’s your home, 
-          office, or commercial project — Afghan Paint helps you design an 
-          environment that truly inspires.
+          and lasting spaces...
         </p>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, idx) => (
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 mb-20">
+          {products.map((product, index) => (
             <div
-              key={idx}
+              key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 flex flex-col items-center text-center"
             >
               <div className="w-28 h-28 flex items-center justify-center rounded-full mb-6 shadow-inner">
@@ -109,7 +118,8 @@ export default function ProductCards() {
                   className="w-20 h-20 object-contain"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">{product.name}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">{product.name}</h3>
+              <p className="text-red-600 font-semibold mb-4 text-lg">{product.price} AF</p>
               <ul className="text-gray-600 text-sm mb-6 space-y-2 text-left w-full max-w-xs">
                 {product.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
@@ -122,12 +132,17 @@ export default function ProductCards() {
                   <li><span className="font-semibold">Waterproof:</span> {product.waterproof}</li>
                 )}
               </ul>
-              <button className="mt-auto bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg">
+              <button
+                
+                className="mt-auto bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition duration-300 shadow-md hover:shadow-lg w-full"
+              >
                 Buy Now
               </button>
             </div>
           ))}
         </div>
+
+       
       </div>
     </section>
   );

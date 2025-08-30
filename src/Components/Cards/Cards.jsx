@@ -1,4 +1,3 @@
-import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 import img1 from "../../../public/images/cardimg.jpg";
 
@@ -30,14 +29,12 @@ export default function Cards() {
             key={index}
             className="relative rounded-2xl overflow-hidden shadow-lg group h-80 sm:h-96 cursor-pointer"
           >
-            {/* Background Image */}
             <img
               src={card.img}
               alt={card.title}
               className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
             />
 
-            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/20 flex flex-col justify-end p-5 text-white">
               <h3 className="text-lg sm:text-xl font-semibold">{card.title}</h3>
               <p className="text-sm sm:text-base mt-2">{card.desc}</p>

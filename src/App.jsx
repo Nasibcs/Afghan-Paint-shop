@@ -7,6 +7,7 @@ import Cards from './Components/Cards/Cards'
 import ProductCards from './Components/ProductCards/ProductCards'
 import Article from './Components/Article/Article';
 import Footer from "./Components/Footer/Footer"
+import AddToCart from './Components/AddToCart/AddToCart'
 export default function App() {
   return (
     <div>
@@ -28,6 +29,7 @@ export default function App() {
           <Route path='/about' element={<div>About</div>}/>
           <Route path='/products' element={<div>Products</div>}/>
           <Route path='/contact' element={<div>Contact</div>}/>
+          <Route path='/cart' element={<AddToCart/>}/>
         </Routes>
       </Router>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import img from "./image/image.jpg";
+import img from "./image/wallimage.JPG";
 
 export default function Desc() {
   return (
